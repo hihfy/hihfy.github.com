@@ -1,0 +1,683 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="git," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="git init                                                  # 初始化本地git仓库（创建新仓库）
+git config --global user.name &amp;quot;xxx&amp;quot;                       # 配置用户名
+git config --global user.email &amp;quot;xxx@xxx.c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令大全">
+<meta property="og:url" content="http://notes.hihfy.com/2016/07/29/2016/07/git常用命令大全/index.html">
+<meta property="og:site_name" content="hfy's Notes">
+<meta property="og:description" content="git init                                                  # 初始化本地git仓库（创建新仓库）
+git config --global user.name &amp;quot;xxx&amp;quot;                       # 配置用户名
+git config --global user.email &amp;quot;xxx@xxx.c">
+<meta property="og:updated_time" content="2016-08-08T08:02:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令大全">
+<meta name="twitter:description" content="git init                                                  # 初始化本地git仓库（创建新仓库）
+git config --global user.name &amp;quot;xxx&amp;quot;                       # 配置用户名
+git config --global user.email &amp;quot;xxx@xxx.c">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> git常用命令大全 | hfy's Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">hfy's Notes</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">有一个全栈的梦！</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                git常用命令大全
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-29T09:18:00+08:00" content="2016-07-29">
+              2016-07-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/29/2016/07/git常用命令大全/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/29/2016/07/git常用命令大全/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>git init                                                  # 初始化本地git仓库（创建新仓库）
+git config --global user.name &quot;xxx&quot;                       # 配置用户名
+git config --global user.email &quot;xxx@xxx.com&quot;              # 配置邮件
+git config --global color.ui true                         # git status等命令自动着色
+git config --global color.status auto
+git config --global color.diff auto
+git config --global color.branch auto
+git config --global color.interactive auto
+git config --global --unset http.proxy                    # remove  proxy configuration on git
+git clone git+ssh://git@192.168.53.168/VT.git             # clone远程仓库
+git status                                                # 查看当前版本状态（是否修改）
+git add xyz                                               # 添加xyz文件至index
+git add .                                                 # 增加当前子目录下所有更改过的文件至index
+git commit -m &apos;xxx&apos;                                       # 提交
+git commit --amend -m &apos;xxx&apos;                               # 合并上一次提交（用于反复修改）
+git commit -am &apos;xxx&apos;                                      # 将add和commit合为一步
+git rm xxx                                                # 删除index中的文件
+git rm -r *                                               # 递归删除
+git log                                                   # 显示提交日志
+git log -1                                                # 显示1行日志 -n为n行
+git log -5
+git log --stat                                            # 显示提交日志及相关变动文件
+git log -p -m
+git show dfb02e6e4f2f7b573337763e5c0013802e392818         # 显示某个提交的详细内容
+git show dfb02                                            # 可只用commitid的前几位
+git show HEAD                                             # 显示HEAD提交日志
+git show HEAD^                                            # 显示HEAD的父（上一个版本）的提交日志 ^^为上两个版本 ^5为上5个版本
+git tag                                                   # 显示已存在的tag
+git tag -a v2.0 -m &apos;xxx&apos;                                  # 增加v2.0的tag
+git show v2.0                                             # 显示v2.0的日志及详细内容
+git log v2.0                                              # 显示v2.0的日志
+git diff                                                  # 显示所有未添加至index的变更
+git diff --cached                                         # 显示所有已添加index但还未commit的变更
+git diff HEAD^                                            # 比较与上一个版本的差异
+git diff HEAD -- ./lib                                    # 比较与HEAD版本lib目录的差异
+git diff origin/master..master                            # 比较远程分支master上有本地分支master上没有的
+git diff origin/master..master --stat                     # 只显示差异的文件，不显示具体内容
+git remote add origin git+ssh://git@192.168.53.168/VT.git # 增加远程定义（用于push/pull/fetch）
+git branch                                                # 显示本地分支
+git branch --contains 50089                               # 显示包含提交50089的分支
+git branch -a                                             # 显示所有分支
+git branch -r                                             # 显示所有原创分支
+git branch --merged                                       # 显示所有已合并到当前分支的分支
+git branch --no-merged                                    # 显示所有未合并到当前分支的分支
+git branch -m master master_copy                          # 本地分支改名
+git checkout -b master_copy                               # 从当前分支创建新分支master_copy并检出
+git checkout -b master master_copy                        # 上面的完整版
+git checkout features/performance                         # 检出已存在的features/performance分支
+git checkout --track hotfixes/BJVEP933                    # 检出远程分支hotfixes/BJVEP933并创建本地跟踪分支
+git checkout v2.0                                         # 检出版本v2.0
+git checkout -b devel origin/develop                      # 从远程分支develop创建新本地分支devel并检出
+git checkout -- README                                    # 检出head版本的README文件（可用于修改错误回退）
+git merge origin/master                                   # 合并远程master分支至当前分支
+git cherry-pick ff44785404a8e                             # 合并提交ff44785404a8e的修改
+git push origin master                                    # 将当前分支push到远程master分支
+git push origin :hotfixes/BJVEP933                        # 删除远程仓库的hotfixes/BJVEP933分支
+git push --tags                                           # 把所有tag推送到远程仓库
+git fetch                                                 # 获取所有远程分支（不更新本地分支，另需merge）
+git fetch --prune                                         # 获取所有原创分支并清除服务器上已删掉的分支
+git pull origin master                                    # 获取远程分支master并merge到当前分支
+git mv README README2                                     # 重命名文件README为README2
+git reset --hard HEAD                                     # 将当前版本重置为HEAD（通常用于merge失败回退）
+git rebase
+git branch -d hotfixes/BJVEP933                           # 删除分支hotfixes/BJVEP933（本分支修改已合并到其他分支）
+git branch -D hotfixes/BJVEP933                           # 强制删除分支hotfixes/BJVEP933
+git ls-files                                              # 列出git index包含的文件
+git show-branch                                           # 图示当前分支历史
+git show-branch --all                                     # 图示所有分支历史
+git whatchanged                                           # 显示提交历史对应的文件修改
+git revert dfb02e6e4f2f7b573337763e5c0013802e392818       # 撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818
+git ls-tree HEAD                                          # 内部命令：显示某个git对象
+git rev-parse v2.0                                        # 内部命令：显示某个ref对于的SHA1 HASH
+git reflog                                                # 显示所有提交，包括孤立节点
+git show HEAD@{5}
+git show master@{yesterday}                               # 显示master分支昨天的状态
+git log --pretty=format:&apos;%h %s&apos; --graph                   # 图示提交日志
+git show HEAD~3
+git show -s --pretty=raw 2be7fcb476
+git stash                                                 # 暂存当前修改，将所有至为HEAD状态
+git stash list                                            # 查看所有暂存
+git stash show -p stash@{0}                               # 参考第一次暂存
+git stash apply stash@{0}                                 # 应用第一次暂存
+git grep &quot;delete from&quot;                                    # 文件中搜索文本“delete from”
+git grep -e &apos;#define&apos; --and -e SORT_DIRENT
+git gc
+git fsck
+</code></pre><p>参考：</p>
+<blockquote>
+<p><a href="https://gist.github.com/guweigang/9848271" target="_blank" rel="external">https://gist.github.com/guweigang/9848271</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag">#git</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/28/2016/07/git多用户设置ssh key/" rel="next" title="git多用户设置ssh key">
+                <i class="fa fa-chevron-left"></i> git多用户设置ssh key
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/30/2016/07/Ubuntu 添加开机运行脚本/" rel="prev" title="Ubuntu 添加开机运行脚本">
+                Ubuntu 添加开机运行脚本 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/29/2016/07/git常用命令大全/"
+           data-title="git常用命令大全" data-url="http://notes.hihfy.com/2016/07/29/2016/07/git常用命令大全/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="HEFENGYANG" />
+          <p class="site-author-name" itemprop="name">HEFENGYANG</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HEFENGYANG</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"hihfy"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
