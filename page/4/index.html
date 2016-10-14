@@ -230,6 +230,368 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/03/2016/08/iOS Potatso 构建/" itemprop="url">
+                  iOS Potatso 构建
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-03T14:26:00+08:00" content="2016-08-03">
+              2016-08-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/03/2016/08/iOS Potatso 构建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/03/2016/08/iOS Potatso 构建/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="模拟器运行"><a href="#模拟器运行" class="headerlink" title="模拟器运行"></a>模拟器运行</h3><pre><code>cd Potatso
+git submodule update --init // 获取子模块后，不知道为何最后文件被删，故git恢复下。
+pod install
+carthage update
+</code></pre><h3 id="真机运行"><a href="#真机运行" class="headerlink" title="真机运行"></a>真机运行</h3><p>  建立在模拟器运行之上，稍后补充。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/01/2016/08/Ubuntu ss-panel 安装与配置/" itemprop="url">
+                  Ubuntu ss-panel 安装与配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-01T11:17:00+08:00" content="2016-08-01">
+              2016-08-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/01/2016/08/Ubuntu ss-panel 安装与配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/01/2016/08/Ubuntu ss-panel 安装与配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="克隆ss-panel"><a href="#克隆ss-panel" class="headerlink" title="克隆ss-panel"></a>克隆ss-panel</h3><pre><code>git clone https://github.com/orvice/ss-panel.git
+</code></pre><h3 id="配置-env"><a href="#配置-env" class="headerlink" title="配置.env"></a>配置.env</h3><p>  cp .env.example .env</p>
+<h3 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h3><pre><code>sudo apt-get install php php-fpm
+</code></pre><h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><pre><code>apt-get install nginx
+</code></pre><h3 id="安装phpmyadmin"><a href="#安装phpmyadmin" class="headerlink" title="安装phpmyadmin"></a>安装phpmyadmin</h3><p>cd /home/www/ss-panel<br>curl -sS <a href="https://getcomposer.org/installer" target="_blank" rel="external">https://getcomposer.org/installer</a> | php<br>php composer.phar  install</p>
+<p>php composer.phar  install 错误apt install php-gd php-curl</p>
+<p>chmod -R 777 storage</p>
+<p>点击首页以为的界面404</p>
+<pre><code>location / {
+ try_files $uri $uri/ /index.php$is_args$args;
+}
+</code></pre><p>安装cymysql</p>
+<p>apt install python-pip</p>
+<p>pip install –upgrade pip</p>
+<p>pip install setuptools</p>
+<p>pip install cymysql</p>
+<p>apt-get install redis-server</p>
+<p>添加节点500错误，需要信息全</p>
+<h3 id="启用https"><a href="#启用https" class="headerlink" title="启用https"></a>启用https</h3><pre><code>server {
+listen 80 ;
+server_name ss.xxx.xxx;
+rewrite ^(.*)  https://$server_name$1 permanent;
+}
+
+server {
+    listen 443 ssl ;
+
+    root /var/www/ss;
+    index index.php index.html index.htm index.nginx-debian.html;
+
+    server_name ss.xxx.xxx;
+    ssl_certificate /etc/nginx/ssl/xxx.crt;
+    ssl_certificate_key /etc/nginx/ssl/xxx.key;
+    ssl_prefer_server_ciphers on;
+    keepalive_timeout    60;
+    ssl_session_cache    shared:SSL:10m;
+    ssl_session_timeout  10m;
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+    location / {
+        try_files $uri $uri/ /index.php$is_args$args;
+    }
+}
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/30/2016/07/Ubuntu phpmyadmin 安装与配置/" itemprop="url">
+                  Ubuntu phpmyadmin 安装与配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-30T22:35:00+08:00" content="2016-07-30">
+              2016-07-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/30/2016/07/Ubuntu phpmyadmin 安装与配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/30/2016/07/Ubuntu phpmyadmin 安装与配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h2><pre><code>sudo apt-get install php php-fpm
+</code></pre><h2 id="安装与配置Nginx"><a href="#安装与配置Nginx" class="headerlink" title="安装与配置Nginx"></a>安装与配置Nginx</h2><h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><pre><code>$ apt-get install nginx
+</code></pre><h3 id="配置Nginx"><a href="#配置Nginx" class="headerlink" title="配置Nginx"></a>配置Nginx</h3><p>修改<code>/etc/nginx/sites-available/default文</code>件里的<code>/usr/share/nginx/html;</code>改为：<code>/var/www;</code>、<code>index</code>后面添加<code>index.php</code></p>
+<pre><code>sudo service nginx reload
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/30/2016/07/Ubuntu phpmyadmin 安装与配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/30/2016/07/Ubuntu MySQL 的安装与配置/" itemprop="url">
                   Ubuntu MySQL 的安装与配置
                 </a>
@@ -1054,245 +1416,11 @@ Host my.github.com
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/27/2016/07/hexo 使用/" itemprop="url">
-                  Hexo 使用相关
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-27T18:24:00+08:00" content="2016-07-27">
-              2016-07-27
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/27/2016/07/hexo 使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/27/2016/07/hexo 使用/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><p>使用<a href="https://atom.io/">atom</a>，github出品，重点是免费，插件多。</p>
-<h3 id="创建文章"><a href="#创建文章" class="headerlink" title="创建文章"></a>创建文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<h3 id="生成静态HTML文件"><a href="#生成静态HTML文件" class="headerlink" title="生成静态HTML文件"></a>生成静态HTML文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure>
-<blockquote>
-<p>Mac下有.DS_Store会导致失败。</p>
-</blockquote>
-<h3 id="运行服务器，本地查看效果"><a href="#运行服务器，本地查看效果" class="headerlink" title="运行服务器，本地查看效果"></a>运行服务器，本地查看效果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s</div></pre></td></tr></table></figure>
-<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure>
-<blockquote>
-<p>发布到github上，</p>
-</blockquote>
-<pre><code>deploy:
-  type: git
-  repo: git@xxx.github.com:xxx/xxx.github.com.git
-</code></pre><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/27/2016/07/hexo 使用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/26/2016/07/Ubuntu 安装 Hexo 记录/" itemprop="url">
-                  Ubuntu 安装 Hexo 记录
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-26T17:20:00+08:00" content="2016-07-26">
-              2016-07-26
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/26/2016/07/Ubuntu 安装 Hexo 记录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/26/2016/07/Ubuntu 安装 Hexo 记录/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>安装官网安装步骤安装，往往会出现问题。</p>
-<ul>
-<li><p>###安装git:<br><code>$ sudo apt-get install git-core</code>目前没出现过问题。</p>
-</li>
-<li><p>###安装 Node.js<br>官方推荐用<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>安装。Ubuntu下安装，看网友提示说要安装nodejs-legacy，安装方法：<code>$ sudo apt-get install nodejs-legacy</code>，详情<a href="https://github.com/hexojs/hexo/issues/580" target="_blank" rel="external">https://github.com/hexojs/hexo/issues/580</a>。</p>
-<blockquote>
-<p>####安装nvm<br>cURL:<br><code>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code><br>Wget:<br><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code><br>安装nvm时，执行这阳光命令分别都出现了问题，但多执行几次后安装成功了。<br>其中遇到的一个问题就是输入<code>nvm</code>提示没有安装nvm，然后再次安装提示已经安装，疑似某个配置出现问题，没有找到该命令。查询资料得知，在~/.bashrc 文件里配置<code>nvm</code>，发现配置正确。<br><code>export NVM_DIR=&quot;/root/.nvm&quot;
-[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm</code><br>最后输入<code>source  .bashrc</code>奇迹般的好了。</p>
-</blockquote>
-</li>
-<li><p>###安装hexo<br><code>$ npm install hexo-cli -g</code>，由于之前设置过系统代理，看错误log是不能连接网络，取消代理，依然不行，重启电脑好了。</p>
-</li>
-<li><p>使用hexo</p>
-<figure class="highlight plain"><figcaption><span>hexo init blog</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd blog</div><div class="line">$ hexo server</div><div class="line">$ hexo new &quot;Hello Hexo&quot;</div><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>最后在浏览器输入localhost:4000就好了。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1333,7 +1461,7 @@ Host my.github.com
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-count">42</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1343,7 +1471,7 @@ Host my.github.com
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
