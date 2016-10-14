@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Mac," />
+  <meta name="keywords" content="Mac,Python," />
 
 
 
@@ -85,21 +85,18 @@
 
 
 <meta name="description" content="pyenv可以方便的安装Python，并多个版本进行切换项目连接：https://github.com/yyuu/pyenv
-命令行安装错误brew install readline xz
-Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”Installing Python-2.7">
+命令行安装错误brew install readline xz">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac 安装 python">
 <meta property="og:url" content="http://notes.hihfy.com/2016/08/07/Python/Mac 安装 python/index.html">
 <meta property="og:site_name" content="hfy's Notes">
 <meta property="og:description" content="pyenv可以方便的安装Python，并多个版本进行切换项目连接：https://github.com/yyuu/pyenv
-命令行安装错误brew install readline xz
-Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”Installing Python-2.7">
-<meta property="og:updated_time" content="2016-08-08T08:02:14.000Z">
+命令行安装错误brew install readline xz">
+<meta property="og:updated_time" content="2016-09-02T02:40:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac 安装 python">
 <meta name="twitter:description" content="pyenv可以方便的安装Python，并多个版本进行切换项目连接：https://github.com/yyuu/pyenv
-命令行安装错误brew install readline xz
-Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”Installing Python-2.7">
+命令行安装错误brew install readline xz">
 
 
 
@@ -286,7 +283,8 @@ Build failed: “ERROR: The Python zlib extension was not compiled. Missing the 
       
         <h3 id="pyenv"><a href="#pyenv" class="headerlink" title="pyenv"></a>pyenv</h3><p>可以方便的安装Python，并多个版本进行切换<br>项目连接：<a href="https://github.com/yyuu/pyenv" target="_blank" rel="external">https://github.com/yyuu/pyenv</a></p>
 <h3 id="命令行安装错误"><a href="#命令行安装错误" class="headerlink" title="命令行安装错误"></a>命令行安装错误</h3><pre><code>brew install readline xz
-</code></pre><h4 id="Build-failed-“ERROR-The-Python-zlib-extension-was-not-compiled-Missing-the-zlib-”"><a href="#Build-failed-“ERROR-The-Python-zlib-extension-was-not-compiled-Missing-the-zlib-”" class="headerlink" title="Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”"></a>Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”</h4><pre><code>Installing Python-2.7.7...
+</code></pre><a id="more"></a>
+<h4 id="Build-failed-“ERROR-The-Python-zlib-extension-was-not-compiled-Missing-the-zlib-”"><a href="#Build-failed-“ERROR-The-Python-zlib-extension-was-not-compiled-Missing-the-zlib-”" class="headerlink" title="Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”"></a>Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”</h4><pre><code>Installing Python-2.7.7...
 
 ERROR: The Python zlib extension was not compiled. Missing the zlib?
 
@@ -304,7 +302,12 @@ BUILD FAILED
 <li><p>更多错误请查看：<a href="https://github.com/yyuu/pyenv/wiki/Common-build-problems#build-failed-error-the-python-zlib-extension-was-not-compiled-missing-the-zlib" target="_blank" rel="external">Common build problems</a></p>
 </li>
 </ul>
-<h3 id="多个版本选择"><a href="#多个版本选择" class="headerlink" title="多个版本选择"></a>多个版本选择</h3><p>由于我安装使用的是<code>zsh</code>，输入<code>pyenv global x.x.x</code>之后无法更改Python版本号，查阅资料看到<code>source</code>关键字，试着将<code>source ~/.bash_profile</code>添加到<code>zshrc</code>文件中，结果Python版本切换成功。</p>
+<h3 id="多个版本选择"><a href="#多个版本选择" class="headerlink" title="多个版本选择"></a>多个版本选择</h3><h4 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h4><p><code>pyenv install --list</code> 查看版本版本列表。</p>
+<p><code>pyenv install 2.x.x</code> 进行安装。</p>
+<p>在<code>~/.bash_profile</code> 文件中添加 <code>eval &quot;$(pyenv init -)&quot;</code></p>
+<p>如果安装的是 <code>zsh</code>， <code>pyenv global x.x.x</code> 无效，需要将 <code>source ~/.bash_profile</code> 添加到 <code>~/.zshrc</code> 文件中。</p>
+<p><code>pyenv local</code>会在本地建一个.python-version文件，该版本设置只在当前目录下有效。</p>
+<p><code>pyenv global</code>这是全局的</p>
 
       
     </div>
@@ -326,9 +329,9 @@ BUILD FAILED
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
-          
             <a href="/tags/Mac/" rel="tag">#Mac</a>
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
         </div>
       
@@ -419,7 +422,7 @@ BUILD FAILED
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -429,7 +432,7 @@ BUILD FAILED
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -458,7 +461,7 @@ BUILD FAILED
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#pyenv"><span class="nav-number">1.</span> <span class="nav-text">pyenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行安装错误"><span class="nav-number">2.</span> <span class="nav-text">命令行安装错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Build-failed-“ERROR-The-Python-zlib-extension-was-not-compiled-Missing-the-zlib-”"><span class="nav-number">2.1.</span> <span class="nav-text">Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个版本选择"><span class="nav-number">3.</span> <span class="nav-text">多个版本选择</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#pyenv"><span class="nav-number">1.</span> <span class="nav-text">pyenv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行安装错误"><span class="nav-number">2.</span> <span class="nav-text">命令行安装错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Build-failed-“ERROR-The-Python-zlib-extension-was-not-compiled-Missing-the-zlib-”"><span class="nav-number">2.1.</span> <span class="nav-text">Build failed: “ERROR: The Python zlib extension was not compiled. Missing the zlib?”</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个版本选择"><span class="nav-number">3.</span> <span class="nav-text">多个版本选择</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Python"><span class="nav-number">3.1.</span> <span class="nav-text">安装Python</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
