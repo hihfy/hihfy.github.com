@@ -230,6 +230,541 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/14/2016/10/UITextview 链接点击延迟问题/" itemprop="url">
+                  UITextview 链接点击延迟问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T16:40:00+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/14/2016/10/UITextview 链接点击延迟问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/UITextview 链接点击延迟问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 添加手势，解决点击延迟问题</span></div><div class="line"> <span class="built_in">UITapGestureRecognizer</span> *tapRecognizer = [[<span class="built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="keyword">self</span> action:<span class="keyword">@selector</span>(tappedTextView:)];</div><div class="line"> [<span class="keyword">self</span>.textView addGestureRecognizer:tapRecognizer];</div><div class="line"></div><div class="line"><span class="comment">// 解决点击链接延迟问题</span></div><div class="line">- (<span class="keyword">void</span>)tappedTextView:(<span class="built_in">UITapGestureRecognizer</span> *)tapGesture &#123;</div><div class="line"> <span class="keyword">if</span> (tapGesture.state != <span class="built_in">UIGestureRecognizerStateEnded</span>) &#123;</div><div class="line">     <span class="keyword">return</span>;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="built_in">UITextView</span> *textView = (<span class="built_in">UITextView</span> *)tapGesture.view;</div><div class="line"> <span class="built_in">CGPoint</span> tapLocation = [tapGesture locationInView:textView];</div><div class="line"> <span class="built_in">UITextPosition</span> *textPosition = [textView closestPositionToPoint:tapLocation];</div><div class="line"> <span class="built_in">NSDictionary</span> *attributes = [textView textStylingAtPosition:textPosition inDirection:<span class="built_in">UITextStorageDirectionForward</span>];</div><div class="line"></div><div class="line"> <span class="keyword">id</span> url = attributes[<span class="built_in">NSLinkAttributeName</span>];</div><div class="line"></div><div class="line"> <span class="keyword">if</span> ([url isKindOfClass:[<span class="built_in">NSString</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">     <span class="keyword">if</span> ([<span class="keyword">self</span>.delegate respondsToSelector:<span class="keyword">@selector</span>(messageCell:didTapHightlightText:)]) &#123;</div><div class="line">         [<span class="keyword">self</span>.delegate messageCell:<span class="keyword">self</span> didTapHightlightText:(<span class="built_in">NSString</span> *)url];</div><div class="line">     &#125;</div><div class="line"> &#125;  <span class="keyword">else</span> <span class="keyword">if</span> ([url isKindOfClass:[<span class="built_in">NSURL</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">     <span class="keyword">if</span> ([<span class="keyword">self</span>.delegate respondsToSelector:<span class="keyword">@selector</span>(messageCell:didTapHightlightText:)]) &#123;</div><div class="line">         [<span class="keyword">self</span>.delegate messageCell:<span class="keyword">self</span> didTapHightlightText:[(<span class="built_in">NSURL</span> *)url absoluteString]];</div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><a href="https://gist.github.com/benjaminbojko/c92ac19fe4db3302bd28" target="_blank" rel="external">https://gist.github.com/benjaminbojko/c92ac19fe4db3302bd28</a></p>
+<p><a href="https://github.com/choefele/CCHLinkTextView" target="_blank" rel="external">https://github.com/choefele/CCHLinkTextView</a></p>
+<p><a href="http://stackoverflow.com/questions/22379595/uitextview-link-tap-recognition-is-delayed" target="_blank" rel="external">http://stackoverflow.com/questions/22379595/uitextview-link-tap-recognition-is-delayed</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/14/2016/10/约束冲突问题:MASLayoutConstraint与NSIBPrototypingLayoutConstraint的冲突/" itemprop="url">
+                  约束冲突问题:MASLayoutConstraint与NSIBPrototypingLayoutConstraint的冲突
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T16:31:00+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/14/2016/10/约束冲突问题:MASLayoutConstraint与NSIBPrototypingLayoutConstraint的冲突/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/约束冲突问题:MASLayoutConstraint与NSIBPrototypingLayoutConstraint的冲突/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>xib或者故事版上拖拉的控件，用代码进行约束，程序没有崩溃，却出现很多错误提示信息，而且部分约束没有效果<br>所以猜测是因为使用IB，在IB中因为没有给控件任何约束，系统会自动为控件添加NSIBPrototypingLayoutConstraint约束，而后在代码中又使用了masonry对控件添加约束，产生约束冲突</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2661610-05dc81a055be506c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>解决方案有两个：<br>（1）通过removeConstraints：方法删除该控件的所有约束，以及该控件父视图的所有约束，然后重新给该控件以及父视图添加约束<br>（2）可以在IB中给控件随便添加一个虚约束，然后选中该约束，修改属性，即把remove at build time 选中，让它在编译阶段删除掉这些约束，然后用masonry添加的约束不回在出现该问题，如图所示<br><img src="http://upload-images.jianshu.io/upload_images/2661610-56d1d071fbc2df42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>文／做一个优秀的程序猿（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/285be05900f4" target="_blank" rel="external">http://www.jianshu.com/p/285be05900f4</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/14/2016/10/SSR 服务端JSON配置/" itemprop="url">
+                  SSR 服务端JSON配置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T16:29:00+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/14/2016/10/SSR 服务端JSON配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/SSR 服务端JSON配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>{
+    &quot;server&quot;: &quot;0.0.0.0&quot;,
+    &quot;server_ipv6&quot;: &quot;::&quot;,
+    &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+    &quot;local_port&quot;: 1080,
+    &quot;port_password&quot;:{
+        &quot;153&quot;:{“protocol&quot;:&quot;auth_simple&quot;, &quot;password&quot;:&quot;XXX&quot;, &quot;obfs&quot;:&quot;http_simple&quot;, &quot;obfs_param&quot;:&quot;XXX&quot;},
+        &quot;18389&quot;:{&quot;protocol&quot;:&quot;origin&quot;, &quot;password&quot;:&quot;XXX&quot;,”obfs&quot;:&quot;http_simple&quot;, &quot;obfs_param”:”baidu.com&quot;”}
+    },
+    &quot;timeout&quot;: 120,
+    &quot;udp_timeout&quot;: 60,
+    &quot;method&quot;: &quot;aes-256-cfb&quot;,
+    &quot;protocol&quot;: &quot;auth_sha1_compatible&quot;,
+    &quot;protocol_param&quot;: &quot;&quot;,
+    &quot;obfs&quot;: &quot;http_simple_compatible&quot;,
+    &quot;obfs_param&quot;: &quot;XXX&quot;,
+    &quot;dns_ipv6&quot;: false,
+    &quot;connect_verbose_info&quot;: 0,
+    &quot;redirect&quot;: &quot;&quot;,
+    &quot;fast_open&quot;: false
+}
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/14/2016/10/找回消失的「允许任何来源应用运行」选项/" itemprop="url">
+                  找回消失的「允许任何来源应用运行」选项
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T16:27:00+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/14/2016/10/找回消失的「允许任何来源应用运行」选项/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/找回消失的「允许任何来源应用运行」选项/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>不少人在升级之后，发现「系统偏好设置 - 安全与隐私 - 通用」中「允许任何来源应用运行」的选项消失了，这是因为 macOS Sierra 加强了系统安全性，降低不良应用威胁电脑安全的几率，但是这也导致某些未经过开发者签名的应用无法在电脑上正常运行。<br>要想找回这个选项，可以在终端中输入sudo spctl –master-disable指令，验证密码之后即可重新开启这个选项。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/14/2016/10/签发免费SSL证书/" itemprop="url">
+                  签发免费SSL证书
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-14T16:26:00+08:00" content="2016-10-14">
+              2016-10-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/14/2016/10/签发免费SSL证书/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/签发免费SSL证书/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://letsencrypt.org/getting-started/" target="_blank" rel="external">https://letsencrypt.org/getting-started/</a></p>
+<p><a href="https://github.com/certbot/certbot" target="_blank" rel="external">https://github.com/certbot/certbot</a></p>
+<p>sudo service apache2 stop &amp;&amp;<br>cd ~ &amp;&amp;<br>git clone <a href="https://github.com/certbot/certbot" target="_blank" rel="external">https://github.com/certbot/certbot</a> &amp;&amp;<br>cd certbot &amp;&amp;<br>./certbot-auto certonly –agree-tos -t –standalone -d lovelucia.zmirrordemo.com</p>
+<p> service apache2 stop &amp;&amp;<br>./certbot-auto certonly –agree-tos -t –standalone -d cloud.hihfy.com</p>
+<p> /etc/letsencrypt/live/</p>
+<p>Ubuntu<br>sudo apt-get install letsencrypt -t jessie-backports # Debian 8<br>sudo apt-get install letsencrypt                     # Debian testing/unstable, Ubuntu 16.04<br>wget <a href="https://dl.eff.org/certbot-auto" target="_blank" rel="external">https://dl.eff.org/certbot-auto</a>                 # CentOS/RHEL 7<br>chmod a+x certbot-auto                               # CentOS/RHEL 7<br>获得证书<br>letsencrypt certonly  # Debian/Ubuntu<br>certbot-auto certonly # CentOS/RHEL<br>自动续期<br>将下列命令加入 cron 即可：<br>letsencrypt renew –quiet  # Debian/Ubuntu<br>certbot-auto renew –quiet # CentOS/RHEL</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/14/2016/10/Pod 更新本地资源/" itemprop="url">
                   Pod 更新本地资源
                 </a>
@@ -749,560 +1284,6 @@ apt-get dist-upgrade 更新系统软件包，包括操作系统
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/14/2016/08/windows8.1 安装密钥/" itemprop="url">
-                  windows8.1 安装密钥
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-14T22:31:00+08:00" content="2016-08-14">
-              2016-08-14
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/14/2016/08/windows8.1 安装密钥/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/2016/08/windows8.1 安装密钥/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>只是用来安装</p>
-<pre><code>Win8安装的序列号
-核心板版： BN3D2-R7TKB-3YPBD-8DRP2-27GG4
-专业版： NG4HW-VH26C-733KW-K6F98-J8CK4
-Win8.1安装的序列号
-核心版（multiple editions），： 334NH-RXG76-64THK-C7CKG-D3VPT
-专业版（Professional）： XHQ8N-C3MCJ-RQXB6-WCHYG-C9WKB
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/14/2016/08/Ubuntu 安装 VNC gnome 桌面/" itemprop="url">
-                  Ubuntu 安装 VNC gnome 桌面
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-14T18:26:00+08:00" content="2016-08-14">
-              2016-08-14
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/14/2016/08/Ubuntu 安装 VNC gnome 桌面/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/14/2016/08/Ubuntu 安装 VNC gnome 桌面/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="需使用root用户进行操作"><a href="#需使用root用户进行操作" class="headerlink" title="需使用root用户进行操作"></a>需使用root用户进行操作</h3><h3 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h3><pre><code>apt update
-</code></pre><h3 id="安装桌面环境"><a href="#安装桌面环境" class="headerlink" title="安装桌面环境"></a>安装桌面环境</h3><p>桌面环境一定要安装，不然不能操作图形界面</p>
-<pre><code>apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal -y
-</code></pre><h3 id="安装-VNC"><a href="#安装-VNC" class="headerlink" title="安装 VNC"></a>安装 VNC</h3><pre><code>apt install vnc4server -y
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/14/2016/08/Ubuntu 安装 VNC gnome 桌面/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/11/2016/08/Haproxy 转发/" itemprop="url">
-                  Haproxy 转发
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-11T16:21:00+08:00" content="2016-08-11">
-              2016-08-11
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/11/2016/08/Haproxy 转发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/11/2016/08/Haproxy 转发/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>/etc/haproxy/haproxy.cfg</p>
-<pre><code>global
-        ulimit-n  51200
-
-defaults
-        log global
-        mode    tcp
-        option  dontlognull
-        contimeout 1000
-        clitimeout 150000
-        srvtimeout 150000
-
-
-frontend ss-in
-        bind *:7890
-        default_backend ss-out
-backend ss-out
-        server server1 xx.xx.xx.xx:1026 maxconn 20480
-
-frontend ss-in1
-         bind *:7891
-         default_backend ss-out1
-backend ss-out1
-        server server3 xx.xx.xx.xx:1030 maxconn 20480
-
-frontend ss-in2
-           bind *:7892
-           default_backend ss-out2
- backend ss-out2
-          server server3 xx.xx.xx.xx:1028 maxconn 20480
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/09/2016/08/Xcode 描述文件位置/" itemprop="url">
-                  Xcode 描述文件位置
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-09T21:47:00+08:00" content="2016-08-09">
-              2016-08-09
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/09/2016/08/Xcode 描述文件位置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/09/2016/08/Xcode 描述文件位置/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>/Users/<em>xxx</em>/Library/MobileDevice/Provisioning Profiles</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/09/2016/08/iOS rvictl 抓包/" itemprop="url">
-                  iOS rvictl 抓包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-09T17:08:00+08:00" content="2016-08-09">
-              2016-08-09
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/09/2016/08/iOS rvictl 抓包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/09/2016/08/iOS rvictl 抓包/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <pre><code>rvictl -s &lt;UDID&gt;  创建RVI接口
-
-ifconfig 查看创建之后的网卡信息，第一个为rvi0
-
-sudo tcpdump -i rvi0 -n -vv 使用tcpdump
-
-使用wireshark
-
-rvictl -x &lt;UDID&gt;
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1348,7 +1329,7 @@ rvictl -x &lt;UDID&gt;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-count">48</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1358,7 +1339,7 @@ rvictl -x &lt;UDID&gt;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

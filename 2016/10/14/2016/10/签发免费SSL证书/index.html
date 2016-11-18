@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="https://letsencrypt.org/getting-started/">
+<meta name="description" content="https://letsencrypt.org/getting-started/
+https://github.com/certbot/certbot
+sudo service apache2 stop &amp;amp;&amp;amp;cd ~ &amp;amp;&amp;amp;git clone https://github.com/certbot/certbot &amp;amp;&amp;amp;cd certbot &amp;amp;&amp;a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="签发免费SSL证书">
 <meta property="og:url" content="http://notes.hihfy.com/2016/10/14/2016/10/签发免费SSL证书/index.html">
 <meta property="og:site_name" content="hfy's Notes">
-<meta property="og:description" content="https://letsencrypt.org/getting-started/">
-<meta property="og:updated_time" content="2016-10-14T08:27:58.000Z">
+<meta property="og:description" content="https://letsencrypt.org/getting-started/
+https://github.com/certbot/certbot
+sudo service apache2 stop &amp;amp;&amp;amp;cd ~ &amp;amp;&amp;amp;git clone https://github.com/certbot/certbot &amp;amp;&amp;amp;cd certbot &amp;amp;&amp;a">
+<meta property="og:updated_time" content="2016-11-18T09:55:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="签发免费SSL证书">
-<meta name="twitter:description" content="https://letsencrypt.org/getting-started/">
+<meta name="twitter:description" content="https://letsencrypt.org/getting-started/
+https://github.com/certbot/certbot
+sudo service apache2 stop &amp;amp;&amp;amp;cd ~ &amp;amp;&amp;amp;git clone https://github.com/certbot/certbot &amp;amp;&amp;amp;cd certbot &amp;amp;&amp;a">
 
 
 
@@ -279,6 +285,11 @@
 
       
         <p><a href="https://letsencrypt.org/getting-started/" target="_blank" rel="external">https://letsencrypt.org/getting-started/</a></p>
+<p><a href="https://github.com/certbot/certbot" target="_blank" rel="external">https://github.com/certbot/certbot</a></p>
+<p>sudo service apache2 stop &amp;&amp;<br>cd ~ &amp;&amp;<br>git clone <a href="https://github.com/certbot/certbot" target="_blank" rel="external">https://github.com/certbot/certbot</a> &amp;&amp;<br>cd certbot &amp;&amp;<br>./certbot-auto certonly –agree-tos -t –standalone -d lovelucia.zmirrordemo.com</p>
+<p> service apache2 stop &amp;&amp;<br>./certbot-auto certonly –agree-tos -t –standalone -d cloud.hihfy.com</p>
+<p> /etc/letsencrypt/live/</p>
+<p>Ubuntu<br>sudo apt-get install letsencrypt -t jessie-backports # Debian 8<br>sudo apt-get install letsencrypt                     # Debian testing/unstable, Ubuntu 16.04<br>wget <a href="https://dl.eff.org/certbot-auto" target="_blank" rel="external">https://dl.eff.org/certbot-auto</a>                 # CentOS/RHEL 7<br>chmod a+x certbot-auto                               # CentOS/RHEL 7<br>获得证书<br>letsencrypt certonly  # Debian/Ubuntu<br>certbot-auto certonly # CentOS/RHEL<br>自动续期<br>将下列命令加入 cron 即可：<br>letsencrypt renew –quiet  # Debian/Ubuntu<br>certbot-auto renew –quiet # CentOS/RHEL</p>
 
       
     </div>
@@ -391,7 +402,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-count">48</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -401,7 +412,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
