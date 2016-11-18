@@ -230,6 +230,115 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/09/2016/08/gitlab 重置管理员密码/" itemprop="url">
+                  gitlab 重置管理员密码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-09T12:34:00+08:00" content="2016-08-09">
+              2016-08-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/09/2016/08/gitlab 重置管理员密码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/09/2016/08/gitlab 重置管理员密码/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="使用命令行重置"><a href="#使用命令行重置" class="headerlink" title="使用命令行重置"></a>使用命令行重置</h3><pre><code>gitlab-rails console production
+irb(main):001:0&gt; u = User.where(id: 1).first
+u.password = &apos;secret_pass&apos;
+u.password_confirmation = &apos;secret_pass&apos;
+u.save!
+</code></pre><p>参考：</p>
+<blockquote>
+<p><a href="http://roland.kierkels.net/git/reset-your-gitlab-root-password-from-a-terminal/" target="_blank" rel="external">RESET YOUR GITLAB ROOT PASSWORD FROM A TERMINAL</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/08/2016/08/iOS 合并模拟器类库和真机类库/" itemprop="url">
                   iOS 合并模拟器类库和真机类库
                 </a>
@@ -1159,115 +1268,6 @@ Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/03/2016/08/Ubuntu 使用终端更改系统语言/" itemprop="url">
-                  Ubuntu 使用终端更改系统语言
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-03T18:57:00+08:00" content="2016-08-03">
-              2016-08-03
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/03/2016/08/Ubuntu 使用终端更改系统语言/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/03/2016/08/Ubuntu 使用终端更改系统语言/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="安装语言包"><a href="#安装语言包" class="headerlink" title="安装语言包"></a>安装语言包</h3><p>首先安装简体中文语言包</p>
-<pre><code>sudo apt-get install language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base
-</code></pre><p>然后安装firefox，libreoffice，thunderbird等程序的中文语言包</p>
-<pre><code>sudo apt-get install `check-language-support -l zh`
-</code></pre><p>将locale中的语言设为zh_CN.UTF-8</p>
-<pre><code>sudo localectl set-locale LANG=zh_CN.UTF-8
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/08/03/2016/08/Ubuntu 使用终端更改系统语言/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1313,7 +1313,7 @@ Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1323,7 +1323,7 @@ Signed-off-by: David S. Miller &lt;davem@davemloft.net&gt;
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

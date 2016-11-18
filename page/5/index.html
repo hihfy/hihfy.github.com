@@ -230,6 +230,138 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/28/2016/07/git多用户设置ssh key/" itemprop="url">
+                  git多用户设置ssh key
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-28T16:24:00+08:00" content="2016-07-28">
+              2016-07-28
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/28/2016/07/git多用户设置ssh key/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/28/2016/07/git多用户设置ssh key/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>使用不同git（gitlab/github）时，可以使用同一个key，但在github上不用账号使用同一个key时，就会提示不能使用。这时我们就需要进行另外的设置，先生成key:</p>
+<pre><code>// 切换到ssh的目录
+cd ~/.ssh
+// 执行密钥生成命令
+ssh-keygen -t rsa -C &quot;youremail@xxx.com&quot;
+// 输入文件名，不输入会使用默认设置，会覆盖以前的
+Enter file in which to save the key (/Users/xxx/.ssh/id_rsa):test
+// 可以直接回车然后就会在当前目录生成两个文件，test和test.pub。
+Enter passphrase (empty for no passphrase):
+// 获取密钥，添加到git账户中
+cat test.pub
+// 在.ssh/下创建config文件
+vim config
+// 更具需求酌情更改
+Host github.com  
+  HostName github.com  
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa  
+Host my.github.com
+  HostName github.com
+  PreferredAuthentications publickey  
+  IdentityFile ~/.ssh/test
+</code></pre></li>
+<li><p>最后第二个账户，使用到github.com的地方，替换成my.github.com</p>
+</li>
+<li><p>参考：</p>
+<blockquote>
+<p><a href="https://gist.github.com/suziewong/4378434" target="_blank" rel="external">https://gist.github.com/suziewong/4378434</a><br><a href="http://blog.csdn.net/itmyhome1990/article/details/42643233" target="_blank" rel="external">http://blog.csdn.net/itmyhome1990/article/details/42643233</a></p>
+</blockquote>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/27/2016/07/hexo 使用/" itemprop="url">
                   Hexo 使用相关
                 </a>
@@ -488,7 +620,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">42</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -498,7 +630,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
