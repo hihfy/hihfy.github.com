@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -63,7 +63,7 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
@@ -93,19 +93,33 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
     }
   };
 </script>
+
+
+
+
+
+
 
   <title> hfy's Notes </title>
 </head>
@@ -199,6 +213,8 @@
   
 </nav>
 
+
+
  </div>
     </header>
 
@@ -212,13 +228,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/UITextview 链接点击延迟问题/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -240,13 +269,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T16:40:00+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -254,9 +281,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/10/14/2016/10/UITextview 链接点击延迟问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/UITextview 链接点击延迟问题/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/UITextview 链接点击延迟问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -268,6 +295,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -299,6 +329,7 @@
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -316,13 +347,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/约束冲突问题:MASLayoutConstraint与NSIBPrototypingLayoutConstraint的冲突/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -344,13 +388,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T16:31:00+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -358,9 +400,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/10/14/2016/10/约束冲突问题:MASLayoutConstraint与NSIBPrototypingLayoutConstraint的冲突/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/约束冲突问题:MASLayoutConstraint与NSIBPrototypingLayoutConstraint的冲突/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/约束冲突问题:MASLayoutConstraint与NSIBPrototypingLayoutConstraint的冲突/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -372,6 +414,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -402,6 +447,7 @@
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -419,13 +465,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/SSR 服务端JSON配置/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -447,13 +506,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T16:29:00+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -461,9 +518,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/10/14/2016/10/SSR 服务端JSON配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/SSR 服务端JSON配置/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/SSR 服务端JSON配置/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -475,6 +532,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -523,6 +583,7 @@
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -540,13 +601,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/找回消失的「允许任何来源应用运行」选项/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -568,13 +642,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T16:27:00+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -582,9 +654,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/10/14/2016/10/找回消失的「允许任何来源应用运行」选项/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/找回消失的「允许任何来源应用运行」选项/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/找回消失的「允许任何来源应用运行」选项/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -596,6 +668,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -624,6 +699,7 @@
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -641,13 +717,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/签发免费SSL证书/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -669,13 +758,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T16:26:00+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -683,9 +770,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/10/14/2016/10/签发免费SSL证书/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/签发免费SSL证书/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/签发免费SSL证书/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -697,6 +784,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -730,6 +820,7 @@
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -747,13 +838,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/Pod 更新本地资源/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -775,13 +879,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T16:24:00+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -789,9 +891,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/10/14/2016/10/Pod 更新本地资源/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/Pod 更新本地资源/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/Pod 更新本地资源/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -803,6 +905,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -831,6 +936,7 @@
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -848,13 +954,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/Google 不强制跳转/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -876,13 +995,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-14T15:52:00+08:00" content="2016-10-14">
-              2016-10-14
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -890,9 +1007,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/10/14/2016/10/Google 不强制跳转/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/Google 不强制跳转/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/Google 不强制跳转/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -904,6 +1021,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -937,6 +1057,7 @@
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -954,13 +1075,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/08/29/2016/08/Ubuntu 配置 Time Machine 备份/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -982,13 +1116,11 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-29T22:55:00+08:00" content="2016-08-29">
-              2016-08-29
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -996,9 +1128,9 @@
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/08/29/2016/08/Ubuntu 配置 Time Machine 备份/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/29/2016/08/Ubuntu 配置 Time Machine 备份/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/29/2016/08/Ubuntu 配置 Time Machine 备份/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1010,6 +1142,9 @@
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -1063,6 +1198,7 @@ model=Xserve
       
     </div>
 
+
     <footer class="post-footer">
       
 
@@ -1080,13 +1216,26 @@ model=Xserve
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/08/16/2016/08/Mac 添加开机启动脚本 & 应用/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -1108,13 +1257,11 @@ model=Xserve
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-16T23:38:00+08:00" content="2016-08-16">
-              2016-08-16
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1122,9 +1269,9 @@ model=Xserve
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/08/16/2016/08/Mac 添加开机启动脚本 & 应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/16/2016/08/Mac 添加开机启动脚本 & 应用/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/16/2016/08/Mac 添加开机启动脚本 & 应用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1136,6 +1283,9 @@ model=Xserve
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -1150,11 +1300,13 @@ model=Xserve
         
           <h3 id="添加开机启动"><a href="#添加开机启动" class="headerlink" title="添加开机启动"></a>添加开机启动</h3><h4 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h4><p>系统偏好设置–&gt;用户与群组–&gt;登录项–&gt;加号–&gt;选择启动应用</p>
 <p><img src="http://ww2.sinaimg.cn/large/9a0a1122jw1f6w0prpd72j21140quq8v.jpg" alt=""></p>
+          <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/08/16/2016/08/Mac 添加开机启动脚本 & 应用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1166,6 +1318,7 @@ model=Xserve
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -1184,13 +1337,26 @@ model=Xserve
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/08/15/2016/08/Ubuntu update upgrade dist-upgrade 的区别/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -1212,13 +1378,11 @@ model=Xserve
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-15T20:46:00+08:00" content="2016-08-15">
-              2016-08-15
-            </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -1226,9 +1390,9 @@ model=Xserve
           
             
               <span class="post-comments-count">
-                &nbsp; | &nbsp;
+                <span class="post-meta-divider">|</span>
                 <a href="/2016/08/15/2016/08/Ubuntu update upgrade dist-upgrade 的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/15/2016/08/Ubuntu update upgrade dist-upgrade 的区别/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/15/2016/08/Ubuntu update upgrade dist-upgrade 的区别/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1240,6 +1404,9 @@ model=Xserve
           
 
           
+
+          
+
         </div>
       </header>
     
@@ -1269,6 +1436,7 @@ apt-get dist-upgrade 更新系统软件包，包括操作系统
     <div>
       
     </div>
+
 
     <footer class="post-footer">
       
@@ -1318,7 +1486,7 @@ apt-get dist-upgrade 更新系统软件包，包括操作系统
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -1359,6 +1527,9 @@ apt-get dist-upgrade 更新系统软件包，包括操作系统
         
         
 
+        
+
+
       </section>
 
       
@@ -1383,16 +1554,7 @@ apt-get dist-upgrade 更新系统软件包，包括操作系统
   <span class="author" itemprop="copyrightHolder">HEFENGYANG</span>
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
 
         
 
@@ -1493,19 +1655,29 @@ apt-get dist-upgrade 更新系统软件包，包括操作系统
 
   
     
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
 
 
 
 
-  
+
+
+
   
   
 
   
 
   
+
+  
+
+  
+
 
 </body>
 </html>
