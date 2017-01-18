@@ -234,6 +234,136 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2017/01/18/2017/01/Cocoapods 加速/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HEFENGYANG">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hfy's Notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/01/18/2017/01/Cocoapods 加速/" itemprop="url">
+                  Cocoapods 加速
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2017/01/18/2017/01/Cocoapods 加速/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/18/2017/01/Cocoapods 加速/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="设置git代理"><a href="#设置git代理" class="headerlink" title="设置git代理"></a>设置git代理</h3><ul>
+<li>编辑~/.gitconfig 添加下面内容，也可以用命令行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[https]</div><div class="line">         proxy = socks5://127.0.0.1:1080</div><div class="line">[http]</div><div class="line">         proxy = socks5://127.0.0.1:1080</div></pre></td></tr></table></figure>
+<ul>
+<li>使用命令行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global http.proxy &apos;socks5://127.0.0.1:1080&apos;</div><div class="line">git config --global https.proxy &apos;socks5://127.0.0.1:1080&apos;</div></pre></td></tr></table></figure>
+<ul>
+<li>这样能解决从github上clone时慢的问题，但不能解决某些命令问题，比如curl命令的下载。<br>这时可以用<a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="external">proxychains4</a>，不如更新的时候，<code>proxychains4 pod update</code></li>
+</ul>
+<h3 id="使用Proxifier，接管全局网络。"><a href="#使用Proxifier，接管全局网络。" class="headerlink" title="使用Proxifier，接管全局网络。"></a>使用Proxifier，接管全局网络。</h3><ul>
+<li>下载<a href="https://www.proxifier.com/mac/" target="_blank" rel="external">Proxifier</a></li>
+</ul>
+<h3 id="将pod-类库以zip形式下载到本地，进行p更新"><a href="#将pod-类库以zip形式下载到本地，进行p更新" class="headerlink" title="将pod 类库以zip形式下载到本地，进行p更新"></a>将pod 类库以zip形式下载到本地，进行p更新</h3><p><code>pod &#39;test&#39;, :path =&gt; &#39;./downloadCode/code/&#39;</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/11/18/2016/11/Linux中记录终端输出到文本文件/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -788,35 +918,21 @@
 
       
         
-          
-            <p>使用二进制安装：</p>
-<p><a href="https://gogs.io/docs/advanced/configuration_cheat_sheet" target="_blank" rel="external">查看gogs官方配置文件手册</a></p>
-<p>下载对应版本：（平台不对会报错，-bash: ./gogs: No such file or directory）<br><a href="https://github.com/gogits/gogs/releases" target="_blank" rel="external">https://github.com/gogits/gogs/releases</a></p>
+          <p>使用二进制安装：</p>
+<p><a href="https://gogs.io/docs/advanced/configuration_cheat_sheet">查看gogs官方配置文件手册</a></p>
+<p>下载对应版本：（平台不对会报错，-bash: ./gogs: No such file or directory）<br><a href="https://github.com/gogits/gogs/releases">https://github.com/gogits/gogs/releases</a></p>
 <p>运行：./gogs web</p>
-<p>一切顺利就能访问<a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></p>
+<p>一切顺利就能访问<a href="http://localhost:3000">http://localhost:3000</a></p>
 <p>Apache 反代理：</p>
 <p>1.加载apache模块，使用a2enmod命令加载模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a2enmod proxy proxy_balancer proxy_http</div></pre></td></tr></table></figure></p>
 <p>加载完成后需要使用命令/etc/init.d/apache2 restart重启服务器<br>2.配置反向代理功能，进入sites_available，创建一个新的站点配置文件，然后编辑内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;VirtualHost *:80&gt;</div><div class="line">        #配置站点的域名</div><div class="line">        ServerName xxx.com</div><div class="line">        #配置站点的管理员信息</div><div class="line">        ServerAdmin xxx@gmail.com</div><div class="line"></div><div class="line">        #off表示开启反向代理，on表示开启正向代理</div><div class="line">        ProxyRequests Off</div><div class="line">        ProxyMaxForwards 100</div><div class="line">        ProxyPreserveHost On</div><div class="line">        #这里表示要将现在这个虚拟主机跳转到本机的3000端口</div><div class="line">        ProxyPass / http://127.0.0.1:3000/</div><div class="line">        ProxyPassReverse / http://127.0.0.1:3000/</div><div class="line"></div><div class="line">        &lt;Proxy *&gt;</div><div class="line">            Order Deny,Allow</div><div class="line">            Allow from all</div><div class="line">        &lt;/Proxy&gt;</div><div class="line">&lt;/VirtualHost&gt;</div></pre></td></tr></table></figure></p>
-<p>nginx 反代理</p>
-<p>// 已git 用户运行<br>runuser -l git -c ‘目录 gogs web’</p>
-<p>添加git 用户<br>adduser git 没有设置密码</p>
-<p>如果已root用户复制过去的文件，可能需要改文件权限<br>linux修改文件所属用户和组<br>使用chown命令可以修改文件或目录所属的用户：<br>       命令：chown 用户 目录或文件名<br>       例如：chown git /home/git  (把home目录下的git目录的拥有者改为git用户)<br>使用chgrp命令可以修改文件或目录所属的组：<br>       命令：chgrp 组 目录或文件名<br>       例如：chgrp git /home/git  (把home目录下的git目录的所属组改为git组)</p>
-<p>添加开机启动(在新Ubuntu系统中好像失效了)<br>/etc/rc.local</p>
-<p> runuser -l git -c ‘目录 gogs web’</p>
-<p>启动HTTPS</p>
-<p><a href="https://github.com/certbot/certbot" target="_blank" rel="external">https://github.com/certbot/certbot</a></p>
-<p><a href="https://linuxtoy.org/archives/certbot.html" target="_blank" rel="external">https://linuxtoy.org/archives/certbot.html</a></p>
-<p>安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install letsencrypt -t jessie-backports # Debian 8</div><div class="line">sudo apt-get install letsencrypt                     # Debian testing/unstable, Ubuntu 16.04</div><div class="line">wget https://dl.eff.org/certbot-auto                 # CentOS/RHEL 7</div><div class="line">chmod a+x certbot-auto                               # CentOS/RHEL 7</div><div class="line">获得证书</div><div class="line">letsencrypt certonly  # Debian/Ubuntu</div><div class="line">certbot-auto certonly # CentOS/RHEL</div><div class="line">自动续期</div><div class="line">将下列命令加入 cron 即可：</div><div class="line">letsencrypt renew --quiet  # Debian/Ubuntu</div><div class="line">certbot-auto renew --quiet # CentOS/RHEL</div></pre></td></tr></table></figure></p>
-<p>如果提示Apache配置错误，输入:<code>sudo apachectl restart</code>查看错误；</p>
-<p>进程守护</p>
-<p>通过pip安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo pip install supervisor</div></pre></td></tr></table></figure></p>
-<p>Ubuntu 系统<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt install supervisor</div></pre></td></tr></table></figure></p>
-<p>配置：会将配置文件存到/etc/supervisord.conf</p>
-<p>echo_supervisord_conf &gt; /etc/supervisord.conf</p>
-<p>打开/etc/supervisord.conf<br>添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[program:gogs]</div><div class="line">command = runuser -l git -c &apos;/home/git/gogs/gogs web&apos;</div><div class="line">user=root</div><div class="line">autostart=true</div><div class="line">autorestart=true</div><div class="line">stderr_logfile = /var/log/git-gogs.log</div><div class="line">stdout_logfile = /var/log/git-gogs.log</div><div class="line">startsecs=3</div></pre></td></tr></table></figure></p>
-<p>守护进程：详见 <a href="https://github.com/gogits/gogs/tree/master/scripts" target="_blank" rel="external">scripts</a> 文件夹</p>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/11/18/2016/11/Ubuntu 安装git-gogs/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1322,123 +1438,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/AFNetworking -999 问题/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="HEFENGYANG">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/avatar.gif">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="hfy's Notes">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="hfy's Notes" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/14/2016/10/AFNetworking -999 问题/" itemprop="url">
-                  AFNetworking -999 问题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/14/2016/10/AFNetworking -999 问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/AFNetworking -999 问题/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://github.com/AFNetworking/AFNetworking/issues?utf8=%E2%9C%93&amp;q=-999" target="_blank" rel="external">https://github.com/AFNetworking/AFNetworking/issues?utf8=%E2%9C%93&amp;q=-999</a></p>
-<p>出现该问题是进行HTTPS的抓包，故。。。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1484,7 +1483,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">49</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1494,7 +1493,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
