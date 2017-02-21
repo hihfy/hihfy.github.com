@@ -234,7 +234,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/Mac 刷新 DNS 缓存/">
+  <link itemprop="mainEntityOfPage" href="http://notes.hihfy.com/2016/10/14/2016/10/Mac 终端启动慢/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="HEFENGYANG">
@@ -259,8 +259,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/14/2016/10/Mac 刷新 DNS 缓存/" itemprop="url">
-                  Mac 刷新 DNS 缓存
+                <a class="post-title-link" href="/2016/10/14/2016/10/Mac 终端启动慢/" itemprop="url">
+                  Mac 终端启动慢
                 </a>
               
             
@@ -282,8 +282,8 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/2016/10/14/2016/10/Mac 刷新 DNS 缓存/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/Mac 刷新 DNS 缓存/" itemprop="commentCount"></span>
+                <a href="/2016/10/14/2016/10/Mac 终端启动慢/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/2016/10/Mac 终端启动慢/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -311,7 +311,18 @@
       
         
           
-            <p>OS X Yosemite及更新机型<br>在 OS X v10.10.4 或更高版本中，请使用以下“终端”命令来还原 DNS 缓存设置：<br>sudo killall -HUP mDNSResponder<br>在 OS X v10.10 至 v10.10.3 中，请使用以下“终端”命令来还原 DNS 缓存设置：<br>sudo discoveryutil mdnsflushcache<br>OS X Mavericks、Mountain Lion 和 Lion<br>在 OS X v10.9.5 及更低版本中，请使用以下“终端”命令来还原 DNS 缓存设置：<br>sudo killall -HUP mDNSResponder<br>Mac OS X Snow Leopard<br>在 OS X v10.6 至 v10.6.8 中，请使用以下“终端”命令来还原 DNS 缓存设置：<br>sudo dscacheutil -flushcache</p>
+            <p>好像并没有解决。。。</p>
+<p><a href="http://huacnlee.com/blog/make-terminal-open-fast-in-mac-osx/" target="_blank" rel="external">http://huacnlee.com/blog/make-terminal-open-fast-in-mac-osx/</a></p>
+<p>先执行 time /usr/libexec/path_helper 得到当前的 PATH 信息</p>
+<ul>
+<li>删除里面的所有文件和目录；</li>
+<li>把刚才 path_helper 返回的&amp;信息写在 ~/.bash_profile 这个文件里面（注：Linux 里面是 .bashrc 而 Mac 是 .bash_profile）。<br>现在关掉重新打开终端，速度如飞一般的感觉，这才像 Mac 的体验嘛！</li>
+</ul>
+<p><a href="https://blog.allenchou.cc/os-x-terminal-login-slow/" target="_blank" rel="external">https://blog.allenchou.cc/os-x-terminal-login-slow/</a></p>
+<p>sudo rm -rf /private/var/log/asl/*.asl</p>
+<p>/usr/bin/bash</p>
+<p><a href="https://ruby-china.org/topics/17702" target="_blank" rel="external">https://ruby-china.org/topics/17702</a></p>
+<p>$ source ~/.rvm/scripts/rvm</p>
 
           
         
